@@ -169,7 +169,7 @@ export default class MathsController extends Controller {
         if (n === 0 || n === 1) {
             return 1;
         }
-        return n * factorial(n - 1);
+        return n * this.factorial(n - 1);
     }
     isPrime(value) {
         for (var i = 2; i < value; i++) {
