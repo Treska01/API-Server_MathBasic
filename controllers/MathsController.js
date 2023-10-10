@@ -125,7 +125,7 @@ export default class MathsController extends Controller {
                     case '/':
                         if (parseFloat(myParams.x) == 0
                              && parseFloat(myParams.y) == 0) {
-                                myParams.value == "NaN";
+                                myParams.value = "NaN";
                         } else {
                             myParams.value = parseFloat(myParams.x) / parseFloat(myParams.y);
                         }
@@ -137,7 +137,7 @@ export default class MathsController extends Controller {
         
                     case '%':
                         if (parseInt(myParams.y) == 0) {
-                            myParams.value == "NaN";
+                            myParams.value = "NaN";
                         } else {
                             myParams.value = parseFloat(myParams.x) % parseFloat(myParams.y);
                         }
