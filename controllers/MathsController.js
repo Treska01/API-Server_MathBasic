@@ -40,20 +40,16 @@ export default class MathsController extends Controller {
                     if (myParams.length != 3) {
                         myParams.error = "incorrect amount of parameters";
                         breakAgain = true;
-                    }
-                    if (myParams.x == null) {
+                    } else if (myParams.x == null) {
                         myParams.error = "incorrect parameters - 'x' is missing";
                         breakAgain = true;
-                    }
-                    if (isNaN(parseInt(myParams.x))) {
+                    } else if (isNaN(parseInt(myParams.x))) {
                         myParams.error = "incorrect parameters - 'x' is not a number";
                         breakAgain = true;
-                    }
-                    if (myParams.y == null) {
+                    } else if (myParams.y == null) {
                         myParams.error = "incorrect parameters - 'y' is missing";
                         breakAgain = true;
-                    }
-                    if (isNaN(parseInt(myParams.y))) {
+                    } else if (isNaN(parseInt(myParams.y))) {
                         myParams.error = "incorrect parameters - 'y' is not a number";
                         breakAgain = true;
                     }
@@ -81,20 +77,16 @@ export default class MathsController extends Controller {
                     if (myParams.length != 2) {
                         myParams.error = "incorrect amount of parameters";
                         breakAgain = true;
-                    }
-                    if (myParams.n == null) {
+                    } else if (myParams.n == null) {
                         myParams.error = "incorrect parameters - 'n' is missing";
                         breakAgain = true;
-                    }
-                    if (isNaN(parseInt(myParams.n))) {
+                    } else if (isNaN(parseInt(myParams.n))) {
                         myParams.error = "incorrect parameters - 'n' is not a number";
                         breakAgain = true;
-                    }
-                    if (/[\.]/.test(String(myParams.n))) {
+                    } else if (/[\.]/.test(String(myParams.n))) {
                         myParams.error = "incorrect parameters - 'n' is not an integer";
                         breakAgain = true;
-                    }
-                    if (parseInt(result.n) <= 0) {
+                    } else if (parseInt(result.n) <= 0) {
                         myParams.error = "incorrect parameters - 'n' is not greater than zero";
                         breakAgain = true;
                     }
