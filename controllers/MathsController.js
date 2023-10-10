@@ -29,7 +29,9 @@ export default class MathsController extends Controller {
         //             if (isNaN(parseInt(result.y)))
         //                 return (result.error != null);
         //             break;
-        if(myParams.op != null) {
+        if(myParams.length == 0) {
+            this.HttpContext.response.HTML("../wwwroot/maths-help.html");
+        } else if(myParams.op != null) {
             switch(myParams.op) {
                 case '+':
                 case ' ':
