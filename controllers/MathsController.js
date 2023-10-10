@@ -86,7 +86,7 @@ export default class MathsController extends Controller {
                     } else if (/[\.]/.test(String(myParams.n))) {
                         myParams.error = "incorrect parameters - 'n' is not an integer";
                         breakAgain = true;
-                    } else if (parseInt(result.n) <= 0) {
+                    } else if (parseInt(myParams.n) <= 0) {
                         myParams.error = "incorrect parameters - 'n' is not greater than zero";
                         breakAgain = true;
                     }
@@ -121,8 +121,8 @@ export default class MathsController extends Controller {
         //             return (result.value == parseFloat(result.x) / parseFloat(result.y));
         
                     case '/':
-                        if (parseFloat(result.x) == 0
-                             && parseFloat(result.y) == 0) {
+                        if (parseFloat(myParams.x) == 0
+                             && parseFloat(myParams.y) == 0) {
                                 myParams.value == "NaN";
                         } else {
                             myParams.value == parseFloat(myParams.x) / parseFloat(myParams.y);
@@ -147,13 +147,13 @@ export default class MathsController extends Controller {
         //             return (result.error != null);
         //     }
                     case '!':
-                        myParams.value = factorial(parseInt(myParams.n));
+                        myParams.value = this.factorial(parseInt(myParams.n));
                         break;
                     case 'p':
-                        myParams.value = isPrime(parseInt(myParams.n));
+                        myParams.value = this.isPrime(parseInt(myParams.n));
                         break;
                     case 'np':
-                        myParams.value = findPrime(parseInt(myParams.n));
+                        myParams.value = this.findPrime(parseInt(myParams.n));
                 }
             }
         // } else {
