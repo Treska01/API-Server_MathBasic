@@ -41,10 +41,10 @@ export default class MathsController extends Controller {
                 case '*':
                 case '/':
                 case '%':
-                    /*if (myParams.length != 3) {
+                    if (Object.keys(myParams).length != 3) {
                         myParams.error = "incorrect amount of parameters";
                         breakAgain = true;
-                    } else*/ if (myParams.x == null) {
+                    } else if (myParams.x == null) {
                         myParams.error = "incorrect parameters - 'x' is missing";
                         breakAgain = true;
                     } else if (isNaN(parseInt(myParams.x))) {
@@ -78,10 +78,10 @@ export default class MathsController extends Controller {
                 case '!':
                 case 'p':
                 case 'np':
-                    /*if (myParams.length != 2) {
+                    if (Object.keys(myParams).length != 2) {
                         myParams.error = "incorrect amount of parameters";
                         breakAgain = true;
-                    } else*/ if (myParams.n == null) {
+                    } else if (myParams.n == null) {
                         myParams.error = "incorrect parameters - 'n' is missing";
                         breakAgain = true;
                     } else if (isNaN(parseInt(myParams.n))) {
