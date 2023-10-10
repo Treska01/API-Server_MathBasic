@@ -32,9 +32,11 @@ export default class MathsController extends Controller {
         if(myParams.length == 0) {
             this.HttpContext.response.HTML("../wwwroot/maths-help.html");
         } else if(myParams.op != null) {
+            if (myParams.op == ' ') {
+                myParams.op = '+';
+            }
             switch(myParams.op) {
                 case '+':
-                case ' ':
                 case '-':
                 case '*':
                 case '/':
@@ -108,7 +110,6 @@ export default class MathsController extends Controller {
             if (!breakAgain) {
                 switch (myParams.op) {
                     case '+':
-                    case ' ':
                         myParams.value = parseFloat(myParams.x) + parseFloat(myParams.y);
                         break;
                     case '-':
